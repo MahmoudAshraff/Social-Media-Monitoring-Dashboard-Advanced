@@ -3,64 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Social Media Monitor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>SocialPulse Analytics Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="light-mode">
     <div class="dashboard-wrapper">
-        <header class="dashboard-header">
-            <h1 class="logo-text">SocialWatch </h1>
-            <div class="header-actions">
-                <p class="date-display">Reporting Period: Last 7 Days</p>
-                <button id="theme-toggle" class="theme-btn">☀️ Light Mode</button>
-            </div>
-        </header>
-        
         <div class="dashboard-container">
-            <aside class="dashboard-sidebar">
-                <nav class="platform-filters">
-                    <button class="filter-btn active" data-platform="all">🌐 All Platforms</button>
-                    <button class="filter-btn" data-platform="twitter">🐦 Twitter (X)</button>
-                    <button class="filter-btn" data-platform="instagram">📸 Instagram</button>
-                    <button class="filter-btn" data-platform="facebook">👍 Facebook</button>
-                </nav>
-            </aside>
-
             <main class="dashboard-main">
                 
                 <section class="kpi-cards-grid">
-                    <div class="kpi-card">
-                        <span class="metric-title">Total Reach (Impressions)</span>
-                        <p id="total-reach" class="metric-value"></p>
-                        <span class="change-indicator" id="reach-change"></span>
-                    </div>
-                    <div class="kpi-card">
-                        <span class="metric-title">Engagement Rate</span>
-                        <p id="engagement-rate" class="metric-value"></p>
-                        <span class="change-indicator" id="engagement-change"></span>
-                    </div>
-                    <div class="kpi-card">
-                        <span class="metric-title">Sentiment Score</span>
-                        <p id="sentiment-score" class="metric-value"></p>
-                        <span class="change-indicator" id="sentiment-change"></span>
-                    </div>
-                    <div class="kpi-card">
-                        <span class="metric-title">Published Posts</span>
-                        <p id="total-posts" class="metric-value"></p>
-                        <span class="change-indicator" id="posts-change"></span>
-                    </div>
-                </section>
+                    </section>
                 
-                <section class="chart-section">
-                    <h2 class="section-title">Weekly Reach Trend</h2>
-                    <div class="chart-container">
-                        <div id="reach-chart" class="simple-bar-chart"></div>
-                        <div class="chart-labels">
-                            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                <div class="visuals-grid">
+                    <section class="chart-section trend-chart">
+                        <h2 class="section-title">Weekly Reach Trend</h2>
+                        <div class="chart-container">
+                            <div id="reach-chart" class="simple-bar-chart"></div>
+                            <div class="chart-labels chart-labels-days">
+                                <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+
+                    <section class="chart-section sentiment-chart">
+                        <h2 class="section-title">Sentiment Breakdown</h2>
+                        <div id="sentiment-chart-container" class="donut-chart-wrapper">
+                            </div>
+                    </section>
+                </div>
 
                 <section class="top-content-section">
                     <h2 class="section-title">Top Performing Content (Mock)</h2>
@@ -79,7 +50,8 @@
     </div>
 
     <script src="js/data.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/kpi_renderer.js"></script>
+    <script src="js/chart_module.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
-
